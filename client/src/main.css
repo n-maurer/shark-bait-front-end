@@ -37,10 +37,7 @@ button {
     }
 }
 
-.stacked-div {
-    flex: 0 0 auto;
-
-}
+.stacked-div {}
 
 .header-container {
     height: auto;
@@ -51,6 +48,27 @@ button {
     justify-content: center;
     align-items: center;
     font-size: larger;
+}
+
+.header-logo {
+    flex: 0 0 65%;
+    width: 60%;
+    height: 80%;
+    margin-bottom: 15px;
+    margin: 0 auto;
+    margin-left: 0px;
+}
+
+.streak {
+    flex: 0 0 15%;
+    margin-left: 10px;
+    font-size: x-small;
+}
+
+@media (min-width: 601px) {
+    .streak {
+        font-size: large;
+    }
 }
 
 .alphabet-container {
@@ -298,11 +316,7 @@ button {
 }
 
 
-.header-logo {
-    width: 70%;
-    height: 70%;
-    margin-bottom: 5px;
-}
+
 
 .complete {
     position: relative;

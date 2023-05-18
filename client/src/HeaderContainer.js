@@ -5,6 +5,7 @@ function HeaderContainer(props) {
 
     return (
         <div className="stacked-div header-container">
+            <div className="streak">Streak: {props.streak}</div>
             <img
                 className="header-logo"
                 id="header-logo"
@@ -24,6 +25,7 @@ function HeaderContainer(props) {
 const mapStateToProps = (state) => {
     return {
         wordOfDayDate: state.wordProgress.wordOfDayDate,
+        streak: state.streak.streak,
     };
 };
 export default connect(mapStateToProps)(HeaderContainer);

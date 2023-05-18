@@ -44,7 +44,7 @@ function App(props) {
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        const delay = 200; // Half a second delay
+        const delay = 300; // Half a second delay
 
         const timer = setTimeout(() => {
             setLoading(false);

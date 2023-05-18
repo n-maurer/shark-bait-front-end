@@ -12,6 +12,7 @@ import { resetNumWrong } from "./redux/NumberWrong/num-wrong.actions";
 import { resetLetters } from "./redux/LettersUsed/letters-used.actions";
 import { useState } from "react";
 import word_data from "./WordData";
+import { resetStreak, increaseStreak } from "./redux/Streak/streak.actions";
 
 var today = new Date();
 var month = String(today.getMonth() + 1).padStart(2, "0");
@@ -34,12 +35,18 @@ function getRandomWord() {
 }
 
 function PlayAgain(props) {
-    const [isLoading, setLoading] = useState(true);
-
     const handlePlayAgain = () => {
+        if (
+            props.wordOfDay.every(
+                (value, index) => value === props.wordProgress[index]
+            ) === true
+        ) {
+            props.increaseStreak();
+        } else {
+            props.resetStreak();
+        }
+
         random_word = getRandomWord();
-        console.log("test");
-        console.log(props);
         const fetchData = async () => {
             try {
                 var wod = random_word.name;
@@ -80,6 +87,7 @@ const mapStateToProps = (state) => {
         wordOfDay: state.wordProgress.wordOfDay,
         loading: state.wordProgress.loading,
         category: state.wordProgress.wordOfDayCategory,
+        streak: state.streak.streak,
     };
 };
 
@@ -93,6 +101,8 @@ const mapDispatchToProps = (dispatch) => {
         updateWordOfDayDate: (date) => dispatch(updateWordOfDayDate(date)),
         resetNumWrong: () => dispatch(resetNumWrong()),
         resetLetters: () => dispatch(resetLetters()),
+        resetStreak: () => dispatch(resetStreak()),
+        increaseStreak: () => dispatch(increaseStreak()),
     };
 };
 
