@@ -13,8 +13,8 @@ function Incomplete() {
     const randomMessage = messages[randomIndex];
 
     return (
-        <div className="complete lose">
-            {randomMessage}
+        <div className="complete-container">
+            <div className="complete lose">{randomMessage}</div>
             <PlayAgain />
         </div>
     );

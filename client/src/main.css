@@ -137,6 +137,10 @@ button {
 
 .complete-container {
     flex-basis: 22.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .keyboard-top-row {
@@ -170,13 +174,15 @@ button {
     border-radius: 20%;
     border-color: #f8fff3;
     color: #010C80;
-    /* font-weight: bold; */
+}
+
+.letter-button:hover {
+    cursor: pointer
 }
 
 .letter-button.disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    /* Add any additional styles for the disabled state */
 }
 
 @media (min-width: 601px) {
@@ -231,7 +237,8 @@ button {
     min-height: 20px;
     justify-content: center;
     display: flex;
-    color: #ffffff
+    color: #ffffff;
+    height: 29px
 }
 
 .new-line {
@@ -320,4 +327,24 @@ button {
 
 .lose {
     color: rgb(219, 3, 3)
+}
+
+.circle-button {
+    height: 10px;
+    width: 10px;
+    background-color: #010C80;
+    border: 15px solid rgb(219, 3, 3);
+    border-left: 15px solid #f3f3f3;
+    border-right: 15px solid #f3f3f3;
+    height: 100px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 100px;
+    color: #f3f3f3;
+    margin-top: 10px;
+}
+
+.circle-button:hover {
+    cursor: pointer
 }

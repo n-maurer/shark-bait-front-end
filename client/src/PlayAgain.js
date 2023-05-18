@@ -64,8 +64,10 @@ function PlayAgain(props) {
     };
 
     return (
-        <div className="play-again">
-            <button onClick={handlePlayAgain}>Play Again</button>
+        <div className="play-again-button-container">
+            <button class="circle-button" onClick={handlePlayAgain}>
+                <span>Play Again</span>
+            </button>
         </div>
     );
 }

@@ -13,8 +13,8 @@ function Complete() {
     const randomMessage = messages[randomIndex];
 
     return (
-        <div className="complete">
-            {randomMessage}
+        <div className="complete-container">
+            <div className="complete">{randomMessage}</div>
             <PlayAgain />
         </div>
     );
